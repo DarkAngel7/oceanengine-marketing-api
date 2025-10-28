@@ -90,6 +90,10 @@ type ContextDevice struct {
 	// 3. 原始手机号sha256后的结果，64位字符串
 	// 【注意】手机号的加密步骤仅在能获取明文手机号情况下，使用sha256加密，其他两种手机号形式切勿加密！否则会导致归因为0
 	PhoneNumBlurred string `json:"phone_num_blurred,omitempty"`
+	// 设备对应平台，安卓："android"，iOS："ios"，小写
+	Platform string `json:"platform,omitempty"`
+	// 广告主app采集到的idfv，如果是IOS设备则必填
+	Idfv string `json:"idfv,omitempty"`              
 }
 
 // ContextApp 归因应用信息
